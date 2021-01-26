@@ -1,5 +1,5 @@
 # iot-monitoring
-This is an IoT project with Arduino UNO that monitors the temperature of cities and compares them using the Node-RED platform and Cloud Services.
+An IoT project using MQTT protocol by Publisher-Subsribe method with Arduino UNO (as Publisher) that monitors the temperature of cities and compares them using the Node-RED platform and Cloud Services (as Subscribers).
 
 ## 1 [Description]
 
