@@ -21,3 +21,10 @@ For the sake of simplicity, we outline the linked technologies and how they can 
 
 
 ## 4 [Palettes]
+
+To run this project on the Node-RED platform, you need to install each palette after Node-RED to be online. In the right menu, selects the option 'Manage Palettes' and then the guide 'install'. Seek and install for each following libraries:
+- node-red-node-arduino ( to include I/O ports for arduino communicate )
+- node-red-node-serialport ( to include I/O alternative ports for arduino )
+- node-red-node-openweathermap ( to get real time data from OpenWeather API )
+- node-red-dashboard ( to show data )
+- node-red-contrib-ibm-watson-iot ( to include a linked component IBM )
