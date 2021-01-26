@@ -9,12 +9,12 @@ For the sake of simplicity, we outline the linked technologies and how they can 
 
 ## 2 [Technologies]
 
-- Node-RED platform
-- Arduino UNO
-- DHT Sensor
-- Mosquitto MQTT
-- IBM Watson IoT
-- Open Weather
+- Node-RED platform ([about](www.nodered.org))
+- Arduino UNO ([about](www.arduino.cc/en/Tutorial/HomePage))
+- DHT Sensor ([about](www.arduino.cc/reference/en/libraries/dht-sensor-library/))
+- Mosquitto MQTT ([about](www.mosquitto.org/))
+- IBM Watson IoT ([about](www.ibm.com/cloud/watson-iot-platform))
+- Open Weather ([about](www.openweathermap.org/api))
 
 ## 3 [Archictecture]
 
