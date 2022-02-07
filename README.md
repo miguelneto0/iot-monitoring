@@ -34,7 +34,7 @@ Install Node.js first, and after install Node-RED by command:
 <code>npm install -g --unsafe-perm node-red</code>
 Then, to run the Node-RED just type node-red in terminal and press Enter. If any error happens, the application can be accessed by localhost:1880/ in browser.
 
-In following, the Mosquitto Broker should be installed. For this, download the mosquitto file in the [site] (https://mosquitto.org/download/) as the operation system. And then, verify if mosquitto is on:
+In following, the Mosquitto Broker should be installed. For this, download the mosquitto file in the [site](https://mosquitto.org/download/) as the operation system. And then, verify if mosquitto is on:
 by Windows Services or <code>netstat -an</code>, and check localhost (127.0.0.1):1883/ is LISTENING.
 
 <img src="https://github.com/miguelneto0/iot-monitoring/blob/main/images/nodered_flow.png" width="680">
