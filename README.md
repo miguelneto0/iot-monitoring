@@ -1,5 +1,4 @@
 # iot-monitoring
- READme in progress . . .
  
 This project is part of an academic work for discipline of Implementation Techniques for Automatized Systems, and was performed together with @ElisianePaixao.
 
@@ -50,31 +49,40 @@ To run this project on the Node-RED platform, you need to install each palette a
 
 <img src="https://github.com/miguelneto0/iot-monitoring/blob/main/images/nodered_palettes.png" width="480">
 <p align = "left"><sup>
-Image  (Palettes installed in Node-RED via Manage Palette)</sup></p>
+Figure 1 (Palettes installed in Node-RED via Manage Palette)</sup></p>
 
 ## Nodes Settings
 
+The implementation of Arduino code in C-like language was used just the DHT library to control the temperature and humidity data sensed. Basically, the <code>DHT.h</code> library provides a Class DHT which allows creating objects from the parameters: type (DHTTYPE) and the connected PIN in the Arduino (DHTPIN). And the **void setup()** function just defines the baud rate of the serial port (9600) and initializes the sensor with **dht.begin()**. Meanwhile, the **void loop()** just gets values from readTemperature and readHumidity to print and send to output which after is published in the topic, as Figure 3. 
+ 
 <img src="https://github.com/miguelneto0/iot-monitoring/blob/main/images/arduino_sketch.png"  width="550">
 <p align = "left"><sup>
-Image 2 (Arduino Sketch for collect data with DTH11 sensor)</sup></p>
+Figure 2 (Arduino Sketch for collect data with DTH11 sensor)</sup></p>
 
+In the following, the flow of the nodes must be designed on the Node-RED as Figure 3 below. In this flow, we have on the top an Arduino node connected to MQTT publisher node (mosquittoPUB), both installed from the library by Manage Palette. After, the subscribers such as IBM Watson with temperature and humidity values and OpenWeather data are managed by the function nodes written in simple JavaScript code as the **dataproc_funcition_code.js** and **wheater_function_code.js** files. This function has as goal to discretize the values received from DTHsensor and prepare to store in cloud service of **IBM Watson**.
 
 <img src="https://github.com/miguelneto0/iot-monitoring/blob/main/images/nodered_flow.png" width="680">
 <p align = "left"><sup>
-Image  (Dashboard in Node-RED)</sup></p>
+Figure 3 (Nodes flow in Node-RED)</sup></p>
 
-
+One of these nodes is a special type from OpenWeather, which can be set from the creation of an account in openweatherAPI and generate a KEY for each topic. After that, it is necessary to configure the OpenWeather node in Node-RED with this KEY and remainder parameter to integrate the API with the IoT system, as Figure 4 and 5.
 
 <img src="https://github.com/miguelneto0/iot-monitoring/blob/main/images/openweather_print.png" width="480">
 <p align = "left"><sup>
-Image  (OpenWeather config)</sup></p>
+Figure 4 (OpenWeather account)</sup></p>
 
 <img src="https://github.com/miguelneto0/iot-monitoring/blob/main/images/openweather_config.png" width="480">
-<p align = "left"><sup>
-Image  (OpenWeather config)</sup></p>
+<p align = "left"><sup> Figure 5 (OpenWeather configuration)</sup></p>
+
+In turn, to integrate the cloud service for storing data sensed every time, we use the IBM Watson, which needs to create an account for getting instances to manage the data and keep a history for a long time. The integration is shown in Figure 6.
+
+<img src="https://github.com/miguelneto0/iot-monitoring/blob/main/images/ibmwatson_config.png" width="680">
+<p align = "left"><sup> Figure 6 (IBM Watson integration)</sup></p>
 
 ## Dashboard
 
+Finally, the dashboard that shows the behavior of this system in real-time is presented in Figure 7 below. In this figure, it is possible to know how to open the dashboard from the node-red tools.
+
 <img src="https://github.com/miguelneto0/iot-monitoring/blob/main/images/dashboard_path.png" width="680">
 <p align = "left"><sup>
-Image  (Dashboard in Node-RED)</sup></p>
+Figure 7 (Dashboard in Node-RED)</sup></p>
